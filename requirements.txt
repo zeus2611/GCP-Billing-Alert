@@ -2,3 +2,4 @@ google-cloud-bigquery
 pandas
 numpy
 db-dtypes
+requests
