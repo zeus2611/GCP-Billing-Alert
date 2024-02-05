@@ -1,5 +1,8 @@
 """
-This is the main file of the project. It is responsible for the execution of the project. It uses the BigQuery client to perform a query and get the data. Then, it uses the json_operations.py file to generate the alert and send it to Microsoft Teams.
+This is the main file of the project. 
+It is responsible for the execution of the project. 
+It uses the BigQuery client to perform a query and get the data. 
+Then, it uses the json_operations.py file to generate the alert and send it to Microsoft Teams.
 """
 
 from google.cloud import bigquery
@@ -27,5 +30,5 @@ QUERY_FOR_SERVICE = """
 higherCostProject = client.query_and_wait(QUERY_FOR_PROJECT).to_dataframe()
 higherCostService = client.query_and_wait(QUERY_FOR_SERVICE).to_dataframe()
 
-template_path = "template.json"
-# teams_alert = json_op.generate_alert(template_path, higherCostProject["project"], higherCostService["service"])
+TEMPLATE_PATH = "template.json"
+teamsAlert = json_op.generate_alert(TEMPLATE_PATH, higherCostProject, higherCostService)
