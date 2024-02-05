@@ -32,3 +32,5 @@ higherCostService = client.query_and_wait(QUERY_FOR_SERVICE).to_dataframe()
 
 TEMPLATE_PATH = "template.json"
 teamsAlert = json_op.generate_alert(TEMPLATE_PATH, higherCostProject, higherCostService)
+
+json_op.send_alert(teamsAlert)

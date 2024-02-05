@@ -1,92 +1,35 @@
 {
-    "type": "AdaptiveCard",
-    "body": [
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "ff0000",
+    "summary": "$condition_name",
+    "sections": [
         {
-            "type": "TextBlock",
-            "size": "Medium",
-            "weight": "Bolder",
-            "text": "GCP Budget Alert"
-        },
-        {
-            "type": "TextBlock",
-            "text": "Projects and Services exceeding Rs. 100 budgets are as follows.",
-            "wrap": true
-        },
-        {
-            "type": "Table",
-            "columns": [
+            "activityTitle": "$condition_name",
+            "activitySubtitle": "$summary",
+            "facts": [
                 {
-                    "width": 1
+                    "name": "Projects",
+                    "value": " "
                 },
                 {
-                    "width": 1
+                    "name": "Services",
+                    "value": " "
                 }
             ],
-            "rows": [
-                {
-                    "type": "TableRow",
-                    "cells": [
-                        {
-                            "type": "TableCell",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "Projects",
-                                    "wrap": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "TableCell",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "Services",
-                                    "wrap": true
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "TableRow",
-                    "cells": [
-                        {
-                            "type": "TableCell",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "New TextBlock",
-                                    "wrap": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "TableCell",
-                            "items": [
-                                {
-                                    "type": "TextBlock",
-                                    "text": "New TextBlock",
-                                    "wrap": true
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
+            "markdown": true
+        }
+    ],
+    "potentialAction": [
         {
-            "type": "ActionSet",
-            "actions": [
+            "@type": "OpenUri",
+            "name": "View Billing",
+            "targets": [
                 {
-                    "type": "Action.OpenUrl",
-                    "title": "Open GCP Billing Report",
-                    "style": "positive",
-                    "url": " "
+                    "os": "default",
+                    "uri": "$incident_url"
                 }
             ]
         }
-    ],
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "version": "1.5"
+    ]
 }
