@@ -161,3 +161,4 @@ cython_debug/
 
 # test files
 date.json
+.github/workflows/deploy-function.yml
